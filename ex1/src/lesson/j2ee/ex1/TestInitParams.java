@@ -1,3 +1,5 @@
+package lesson.j2ee.ex1;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -6,7 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
 
-@WebServlet(name = "TestInitParams")
+@WebServlet(name = "lesson.j2ee.ex1.TestInitParams")
 public class TestInitParams extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 

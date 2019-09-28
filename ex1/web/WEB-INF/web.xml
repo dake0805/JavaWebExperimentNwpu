@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>BeerParamTests</servlet-name>
-        <servlet-class>TestInitParams</servlet-class>
+        <servlet-class>lesson.j2ee.ex1.TestInitParams</servlet-class>
         <init-param>
             <param-name>adminEmail</param-name>
             <param-value>hzyTestAdmin@gmail.com</param-value>
