@@ -29,23 +29,32 @@ public class Login extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
         String name = req.getParameter("name");
+        String password = req.getParameter("password");
         boolean judge = true;
         System.out.println(name);
-        Cookie cookies[] = req.getCookies();
+        Cookie[] cookies = req.getCookies();
         if (cookies != null) {
             for (int i = 0; i < cookies.length; i++) {
                 if (cookies[i].getName().equals("name")) {
                     cookies[i].setValue(name);
                     judge = false;
                 }
+                if (cookies[i].getName().equals("password")) {
+                    cookies[i].setValue((password));
+                    judge = false;
+                }
             }
         }
 
         if (judge) {
-            Cookie cookie = new Cookie("name", name);
+            Cookie cookie_name = new Cookie("name", name);
+            Cookie cookie_password = new Cookie("password", password);
+
             // 不设置的话，则cookies不写入硬盘,而是写在内存,只在当前页面有用,以秒为单位
-            cookie.setMaxAge(24 * 60 * 60);
-            res.addCookie(cookie);
+            cookie_name.setMaxAge(24 * 60 * 60);
+            cookie_password.setMaxAge(24 * 60 * 60);
+            res.addCookie(cookie_name);
+            res.addCookie(cookie_password);
         }
 
         PrintWriter out = res.getWriter();
