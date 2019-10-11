@@ -21,4 +21,8 @@
         <tag-class>lesson.j2ee.ex3.BeerColorTag</tag-class>
         <body-content>empty</body-content>
     </tag>
+    <tag>
+        <name>showCartTag</name>
+        <tag-class>lesson.j2ee.ex3.ShowCartTag</tag-class>
+    </tag>
 </taglib>
