@@ -14,6 +14,7 @@
 <b><a href="SelectedBeerColor.jsp">(View the selected beer colors).</a></b>
 <p><b>Choose following information:</b></p>
 
+
 <%
     String[] array = {"The light beer of China", "The amber beer of China", "The beer of American"};
     request.setAttribute("str", array);
