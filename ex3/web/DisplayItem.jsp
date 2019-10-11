@@ -10,7 +10,7 @@
 </head>
 <body>
 <c:set var="sessionList" scope="session" value="${sessionList}, ${param.color} "/>
-<h1 align="center">The beer corlor that you selected is ${param.color}.</h1>
+<h1 align="center">The beer color that you selected is ${param.color}.</h1>
 <b><a href="SelectedBeerColor.jsp">(View the selected beer colors).</a></b>
 <p><b>Choose following information:</b></p>
 
@@ -28,7 +28,9 @@
 
             <tr>
                 <td width="69">
-                    <input type="checkbox" name="item" value=${str}>
+                    <label>
+                        <input type="checkbox" name="item" value=${str}>
+                    </label>
                 </td>
                 <td width="431">Item${strStatus.count}: ${str}</td>
             </tr>
@@ -48,9 +50,9 @@
     </table>
     <hr>
     <p>
-    <center>
+    <div style="text-align: center;">
         <input type="submit" name="btn_submit" value="Buy Now">
-    </center>
+    </div>
 </form>
 </body>
 </html>

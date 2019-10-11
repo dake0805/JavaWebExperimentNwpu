@@ -19,5 +19,6 @@
     <tag>
         <name>beerColorTag</name>
         <tag-class>lesson.j2ee.ex3.BeerColorTag</tag-class>
+        <body-content>empty</body-content>
     </tag>
 </taglib>
