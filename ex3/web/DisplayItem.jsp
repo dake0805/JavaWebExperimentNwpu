@@ -29,7 +29,7 @@
             <tr>
                 <td width="69">
                     <label>
-                        <input type="checkbox" name="item" value=${str}>
+                        <input type="checkbox" name="item" value="${str}">
                     </label>
                 </td>
                 <td width="431">Item${strStatus.count}: ${str}</td>
