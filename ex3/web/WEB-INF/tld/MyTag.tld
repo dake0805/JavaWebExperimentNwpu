@@ -5,7 +5,7 @@
 <taglib>
     <tlib-version>1.0</tlib-version>
     <jsp-version>1.2</jsp-version>
-
+    <short-name>shortName</short-name>
     <tag>
         <name>counter</name>
         <tag-class>lesson.j2ee.ex3.CounterTag</tag-class>
@@ -15,5 +15,9 @@
         <name>colorSelect</name>
         <tag-class>lesson.j2ee.ex3.CreateSelectTag</tag-class>
         <body-content>empty</body-content>
+    </tag>
+    <tag>
+        <name>beerColorTag</name>
+        <tag-class>lesson.j2ee.ex3.BeerColorTag</tag-class>
     </tag>
 </taglib>

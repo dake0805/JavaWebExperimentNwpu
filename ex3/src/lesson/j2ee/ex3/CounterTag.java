@@ -6,6 +6,7 @@ import java.io.IOException;
 
 /**
  * 计数标签
+ * 使用 SimpleTag重新开发
  *
  * @author zzzy
  */
