@@ -20,6 +20,30 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "login", urlPatterns = "/Login.do")
 public class Login extends HttpServlet {
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter out = resp.getWriter();
+        resp.setContentType("text/html");
+
+        Cookie[] cookies = req.getCookies();
+
+        out.println("<html>");
+        out.println("<title>");
+        out.println("User list");
+        out.println("</title>");
+        out.println("<body><h4>User List:</h4><hr><br><br>");
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("name")) {
+                    out.print(cookie.getValue());
+                }
+            }
+        }
+        out.println("</body>");
+        out.println("</html>");
+        out.close();
+    }
+
     /*
      * (non-Javadoc)
      *
