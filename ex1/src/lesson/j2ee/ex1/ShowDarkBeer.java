@@ -1,4 +1,4 @@
-package test;
+package lesson.j2ee.ex1;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

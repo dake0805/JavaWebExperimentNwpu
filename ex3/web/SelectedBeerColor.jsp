@@ -15,6 +15,7 @@
 <br>
 <br>
 <mytag:beerColorTag/>
+<%--使用自定义标签--%>
 <%--<c:forEach var="selected" items="${sessionList}">--%>
 <%--    ${selected}--%>
 <%--    <hr>--%>

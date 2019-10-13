@@ -25,6 +25,7 @@
     <table width="500" border="0" cellspacing="0" cellpadding="0">
         <c:forEach var="str" items="${str}" varStatus="strStatus">
 
+<%--            改写DisplayItem.jsp文件中的<table>，用<c:forEach>标签实现--%>
 
             <tr>
                 <td width="69">

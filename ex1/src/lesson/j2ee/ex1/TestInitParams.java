@@ -8,6 +8,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
 
+/**
+ * 编写一个使用Servlet初始化参数和上下文初始化参数的Servlet
+ *
+ * @author zzzy
+ */
 @WebServlet(name = "lesson.j2ee.ex1.TestInitParams")
 public class TestInitParams extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
@@ -15,8 +20,10 @@ public class TestInitParams extends HttpServlet {
     }
 
     /**
-     * @param request
-     * @param response
+     * 实现 doGet()
+     *
+     * @param request  http request
+     * @param response http response
      * @throws IOException
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -6,10 +6,12 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 
 /**
- *
+ * 自定义标签 beerColorTag
  */
 public class BeerColorTag extends SimpleTagSupport {
     /**
+     * 实现 doTag()
+     *
      * @throws JspException
      * @throws IOException
      */

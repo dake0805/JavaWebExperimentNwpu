@@ -25,6 +25,11 @@ public class CounterTag extends SimpleTagSupport {
 //		return SKIP_BODY;
 //	}
 
+    /**
+     * 实现 doTag()
+     * @throws JspException
+     * @throws IOException
+     */
     @Override
     public void doTag() throws JspException, IOException {
         super.doTag();
