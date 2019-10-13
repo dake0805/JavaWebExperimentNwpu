@@ -37,6 +37,10 @@ public class Login extends HttpServlet {
                 if (cookie.getName().equals("name")) {
                     out.print(cookie.getValue());
                 }
+                if (cookie.getName().equals("password")) {
+                    out.print("  password = ");
+                    out.print(cookie.getValue());
+                }
             }
         }
         out.println("</body>");
@@ -92,6 +96,10 @@ public class Login extends HttpServlet {
         if (cookies != null) {
             for (int i = 0; i < cookies.length; i++) {
                 if (cookies[i].getName().equals("name")) {
+                    out.print(cookies[i].getValue());
+                }
+                if (cookies[i].getName().equals("password")) {
+                    out.print("  password = ");
                     out.print(cookies[i].getValue());
                 }
             }
