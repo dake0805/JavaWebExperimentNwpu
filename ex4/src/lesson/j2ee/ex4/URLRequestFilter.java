@@ -6,55 +6,54 @@ import javax.servlet.http.*;
 
 /**
  * URL 地址过滤处理，只允许访问在过滤器初始化参数中配置的页面类型
- * @author liyong
  *
+ * @author liyong
  */
 public class URLRequestFilter implements Filter {
 
-	private FilterConfig config = null;
+    private FilterConfig config = null;
 
-	public void init(FilterConfig config) throws ServletException {
-		this.config = config;
-	}
+    public void init(FilterConfig config) throws ServletException {
+        this.config = config;
+    }
 
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
 
-		HttpServletRequest httpreq = (HttpServletRequest) request;
-		HttpServletResponse httprep = (HttpServletResponse) response;
-		// HttpServletResponseWrapper wrapper = new HttpServletResponseWrapper(
-		// (HttpServletResponse) response);
-		String redirectPath = httpreq.getContextPath() + config.getInitParameter("redirectPath");
-		String disableFilter = config.getInitParameter("disableFilter");
-		String includeStrings = config.getInitParameter("includeStrings");
-		String[] includeList = includeStrings.split(";");
-		if (disableFilter.toUpperCase().equals("Y")) {
-			chain.doFilter(request, response);
-			return;
-		}
-		if (disableFilter.toUpperCase().equals("N")) {
-			boolean flag = false;
-			for (int i = 0; i < includeList.length; i++) {
-				if (httpreq.getRequestURI().indexOf(includeList[i]) != -1) {
-					flag = true;
-					break;
-				}
-			}
-			if (flag) {
-				chain.doFilter(request, response);
-				return;
-			} else {
-				httprep.sendRedirect(redirectPath);
-			}
+        HttpServletRequest httpreq = (HttpServletRequest) request;
+        HttpServletResponse httprep = (HttpServletResponse) response;
+        // HttpServletResponseWrapper wrapper = new HttpServletResponseWrapper(
+        // (HttpServletResponse) response);
+        String redirectPath = httpreq.getContextPath() + config.getInitParameter("redirectPath");
+        String disableFilter = config.getInitParameter("disableFilter");
+        String includeStrings = config.getInitParameter("includeStrings");
+        String[] includeList = includeStrings.split(";");
+        if (disableFilter.toUpperCase().equals("Y")) {
+            chain.doFilter(request, response);
+            return;
+        }
+        if (disableFilter.toUpperCase().equals("N")) {
+            boolean flag = false;
+            for (String s : includeList) {
+                if (httpreq.getRequestURI().contains(s)) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag) {
+                chain.doFilter(request, response);
+            } else {
+                httprep.sendRedirect(redirectPath);
+            }
 
-		} else {
-			chain.doFilter(request, response);
-		}
-	}
+        } else {
+            chain.doFilter(request, response);
+        }
+    }
 
-	public void destroy() {
-		this.config = null;
+    public void destroy() {
+        this.config = null;
 
-	}
+    }
 
 }
