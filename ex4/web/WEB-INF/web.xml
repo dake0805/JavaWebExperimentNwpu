@@ -81,7 +81,7 @@
         </init-param>
         <init-param>
             <param-name>disableFilter</param-name>
-            <param-value>N</param-value>
+            <param-value>Y</param-value>
         </init-param>
 
     </filter>
@@ -91,16 +91,16 @@
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
 
-    <filter>
-        <filter-name>MyResponseFilter</filter-name>
-        <filter-class>lesson.j2ee.ex4.MyResponseFilter</filter-class>
-    </filter>
+<!--    <filter>-->
+<!--        <filter-name>MyResponseFilter</filter-name>-->
+<!--        <filter-class>lesson.j2ee.ex4.MyResponseFilter</filter-class>-->
+<!--    </filter>-->
 
-    <filter-mapping>
-        <filter-name>MyResponseFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-        <dispatcher>INCLUDE</dispatcher>
-    </filter-mapping>
+<!--    <filter-mapping>-->
+<!--        <filter-name>MyResponseFilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--        <dispatcher>INCLUDE</dispatcher>-->
+<!--    </filter-mapping>-->
 
     <jsp-config>
         <taglib>

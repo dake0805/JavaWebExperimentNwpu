@@ -30,9 +30,7 @@ public class URLRequestFilter implements Filter {
         String[] includeList = includeStrings.split(";");
         if (disableFilter.toUpperCase().equals("Y")) {
             chain.doFilter(request, response);
-            return;
-        }
-        if (disableFilter.toUpperCase().equals("N")) {
+        } else if (disableFilter.toUpperCase().equals("N")) {
             boolean flag = false;
             for (String s : includeList) {
                 if (httpreq.getRequestURI().contains(s)) {
